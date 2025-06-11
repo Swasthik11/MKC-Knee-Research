@@ -1,0 +1,416 @@
+/* Global reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+}
+
+/* Header Styles */
+header {
+  background-color: #fafcfc;
+  color: #1e818f;
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e1f4f8;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header img {
+  max-height: 40px;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+header nav a {
+  color: #1e818f;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  color: #156f8b;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #1e818f;
+  font-weight: bold;
+  background: none;
+  border: none;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in-out;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobile-menu a {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #1e818f;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: #156f8b;
+}
+
+.mobile-menu .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #1e818f;
+  background: none;
+  border: none;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+/* Intro Section */
+.intro {
+  margin-bottom: 40px;
+}
+
+.intro h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #156f8b;
+  text-align: center;
+}
+
+.intro .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro .text {
+  flex: 1 1 400px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  font-weight: 800; /* Slightly bolded (regular is 400) */
+}
+
+
+.intro .image {
+  flex: 1 1 300px;
+}
+
+.intro .image img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Clinical Data Section */
+.clinical-data {
+  background-color: #e1f4f8;
+  padding: 30px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.clinical-data h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #1e818f;
+}
+
+.clinical-data ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+}
+
+.clinical-data li {
+  margin-bottom: 10px;
+}
+
+.clinical-image {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.clinical-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.checkbox-line {
+  display: flex;
+  align-items: flex-start;
+  margin: 6px 0;
+  font-family: Arial, sans-serif;
+}
+
+.clinical-summary {
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+h2 {
+  color: #1e818f;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-header .square.teal {
+  width: 12px;
+  height: 12px;
+  background-color: #1e818f;
+  margin-right: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.square.light {
+  width: 10px;
+  height: 10px;
+  background-color: #60cbc5;
+  margin-right: 10px;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+strong {
+  font-weight: 600;
+}
+
+
+
+/* Approval Note */
+.approval-note {
+  background-color:#1e818f;
+  border-left: 6px solid #1e818f;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #f2f5f5;
+  margin-bottom: 40px;
+}
+
+/* Footer styles */
+.footer {
+  background: linear-gradient(to right, #1e818f, #156f8b);
+  color: white;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #c0e0e5;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+}
+
+.quick-links-grid div {
+  color: #c8f7c5;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.quick-links-grid div span {
+  margin-right: 6px;
+  color: #90ee90;
+}
+
+.footer-section p {
+  margin: 8px 0;
+  color: #e2fdf9;
+}
+
+.footer-section p span {
+  margin-right: 8px;
+  color: #90ee90;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 10px 0;
+  color: #e6f6f6;
+}
+
+.footer-links a {
+  color: #ffffff;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quick-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro .content {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-section {
+    padding: 15px;
+  }
+
+  .footer-section h3 {
+    font-size: 15px;
+  }
+
+  .footer-section p, .quick-links-grid div {
+    font-size: 13px;
+  }
+
+  .intro h1 {
+    font-size: 22px;
+  }
+
+  .clinical-data h2 {
+    font-size: 18px;
+  }
+}
